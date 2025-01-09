@@ -43,9 +43,7 @@ update-docs:
 	rm -rf $(RESOURCE_FOLDER)/sonar-csharp-plugin/
 
 
-pre-fetch-documentation: update-docs
-
-documentation: build-docs
+documentation: update-docs build-docs
 
 documentation:
 	echo $(SONAR_VERSION) > .SONAR_VERSION

@@ -10,8 +10,7 @@ COPY . /workdir
 WORKDIR /workdir
 
 RUN make &&\
-    make publish &&\
-    make documentation
+    make publish
 
 
 ## RUNTIME IMAGE
