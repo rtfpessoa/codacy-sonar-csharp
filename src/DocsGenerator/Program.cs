@@ -53,8 +53,8 @@ namespace CodacyCSharp.DocsGenerator
                 }
 
                 var lvl = LevelHelper.ToLevel(rule.defaultSeverity);
-
-                ParametersIndex sourceParameters = allSourceParameters.First(x => x.Id == rule.sqKey);
+                ParametersIndex sourceParameters = allSourceParameters.FirstOrDefault(x => x.Id == rule.sqKey) ?? 
+                    new ParametersIndex { Id = rule.sqKey, Parameters = new List<Parameter>() };
                 var patternsParameters = sourceParameters.Parameters.Any() ? sourceParameters.Parameters.Select(param =>
                  new Codacy.Engine.Seed.Patterns.Parameter
                  {
